@@ -1,35 +1,23 @@
 const express = require("express");
+const http = require("http");
+
 const app = express();
+
+
 app.set("view engine", "ejs");
-// index.js
-import http from 'http';
-
-// Create a server object
-const server = http.createServer((req, res) => {
-    // Set the response header
-    res.writeHead(200, {'Content-Type': 'text/plain'});
-    // Write some text to the response
-    res.render("index");
-});
-
-// Define the port to listen on
-const port = 3000;
-
-// Start the server
-server.listen(port, ()=>{
-    console.log(`Server is running on http://localhost:${port}`);
-});
 
 
 app.get("/", function(req, res) {
-    res.render("index"); // Use "index" as a string
-    
+    res.render("index"); 
 });
+
+
 app.get("/getsername", function(req, res) {
-
-    res.send("sanisare")
+    res.send("sanisare");
 });
 
-app.listen(3000, () => {
-    console.log("Server is running on http://localhost:3000");
+
+const port = 4000; // Change to a different port
+app.listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}`);
 });
