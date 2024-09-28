@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>kshitij <span id="usernameDisplay"></span> </h1>
+<script>
+
+function fetchUsername() {
+    fetch('/getsername')
+        .then(response => {
+            return response.text(); 
+        })
+        .then(data => {
+
+            
+            document.getElementById('usernameDisplay').innerText = data; 
+        })
+        
+}
+
+
+fetchUsername();
+
+</script>
+</body>
+</html>
