@@ -30,6 +30,6 @@ app.get("/getsername", function(req, res) {
     res.send("sanisare")
 });
 
-app.listen(3000, () => {
+app.listen("https://yewalapakkafinal.vercel.app/", () => {
     console.log("Server is running on http://localhost:3000");
 });
